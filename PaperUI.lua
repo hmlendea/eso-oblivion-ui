@@ -5,11 +5,12 @@ PaperUI = {
     SavedVariablesName = "PaperUI_SavedVariables"
 }
 
+local textureRedirects = { }
+
 function RegisterAddonTexture(esoTexture, addonTexture)
     textureRedirects[esoTexture] = PaperUI.Name .. "/" .. addonTexture
 end
 
-local textureRedirects = { }
 RegisterAddonTexture("esoui/art/icons/poi_city_complete.dds", "assets/mapmarkers/poi_city_complete.dds")
 RegisterAddonTexture("esoui/art/icons/poi_delve_complete.dds", "assets/mapmarkers/poi_delve_complete.dds")
 RegisterAddonTexture("esoui/art/icons/poi_explorable_complete.dds", "assets/mapmarkers/poi_delve_complete.dds")
