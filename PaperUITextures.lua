@@ -4,12 +4,13 @@ function RegisterAddonTexture(esoTexture, addonTexture)
     textureRedirects[esoTexture] = addonTexture
 end
 
-RegisterAddonTexture("esoui/art/icons/poi_city_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_city_complete.dds")
-RegisterAddonTexture("esoui/art/icons/poi_delve_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
-RegisterAddonTexture("esoui/art/icons/poi_explorable_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
-RegisterAddonTexture("esoui/art/icons/poi_keep_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
-RegisterAddonTexture("esoui/art/icons/poi_mundus_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_mundus_complete.dds")
-RegisterAddonTexture("esoui/art/icons/poi_tower_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_city_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_city_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_delve_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_dwemerruin_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_dwemerruin_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_explorable_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_keep_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_mundus_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_mundus_complete.dds")
+RegisterAddonTexture("esoui/art/icons/poi/poi_tower_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
 RegisterAddonTexture("esoui/art/icons/poi/poi_wayshrine_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_wayshrine_complete.dds")
 RegisterAddonTexture("esoui/art/icons/servicemappins/servicepin_bank.dds", PaperUI.Directories.MapMarkers .. "/servicepin_bank.dds")
 RegisterAddonTexture("esoui/art/icons/servicemappins/servicepin_caravan.dds", PaperUI.Directories.MapMarkers .. "/servicepin_caravan.dds")
@@ -24,11 +25,12 @@ RegisterAddonTexture("esoui/art/icons/servicemappins/servicepin_stable.dds", Pap
 RegisterAddonTexture("esoui/art/icons/servicemappins/servicepin_vendor.dds", PaperUI.Directories.MapMarkers .. "/servicepin_vendor.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_city_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_city_complete.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_delve_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
+RegisterAddonTexture("esoui/art/tutorial/poi_dwemerruin_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_dwemerruin_complete.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_explorable_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_delve_complete.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_keep_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_mundus_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_mundus_complete.dds")
 RegisterAddonTexture("esoui/art/tutorial/poi_tower_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_keep_complete.dds")
-RegisterAddonTexture("esoui/art/tutorial/poi/poi_wayshrine_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_wayshrine_complete.dds")
+RegisterAddonTexture("esoui/art/tutorial/poi_wayshrine_complete.dds", PaperUI.Directories.MapMarkers .. "/poi_wayshrine_complete.dds")
 
 function PaperUITextures:EnableAll()
     for esoTexture, addonTexture in pairs(textureRedirects) do
