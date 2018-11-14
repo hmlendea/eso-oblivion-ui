@@ -6,18 +6,22 @@ PaperUI = {
     Directories = {
         Assets = PaperUI.Name .. "/assets",
         Fonts = PaperUI.Directories.Assets .. "/fonts",
-        MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers"
+        MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers/" .. PaperUI.SavedVariables.MapMarkersStyle
     },
     Options = {
-        InterfaceStyle = {
+        InterfaceStyles = {
             [1] = PaperUI.Name,
             [2] = "Vanilla"
         },
+        MapMarkersStyles = {
+            [1] = "Oblivion"
+        }
         Fonts = {
             [1] = "Kingthings_Exeter.ttf"
         },
         Defaults = {
             InterfaceStyle = PaperUI.Options.InterfaceStyles[1],
+            MapMarkersStyle = PaperUI.Options.MapMarkersStyles[1],
             Font = PaperUI.Options.Fonts[1]
         }
     }

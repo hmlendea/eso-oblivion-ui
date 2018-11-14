@@ -27,6 +27,16 @@ local optionsData = {
     },
 	[3] = {
 		type = "dropdown",
+        name = "Map Markers",
+        tooltip = "Choose the map markers style.",
+        choices = PaperUI.Options.MapMarkersStyles,
+        default = PaperUI.Options.MapMarkersStyles[1],
+        warning = reloadUiWarning,
+        getFunc = function() return PaperUI.SavedVariables.MapMarkersStyle end,
+        setFunc = function(val) PaperUI.SavedVariables.MapMarkersStyle = val end
+    },
+	[4] = {
+		type = "dropdown",
         name = "Font",
         tooltip = "Choose the font.",
         choices = PaperUI.Options.Fonts,
@@ -35,7 +45,7 @@ local optionsData = {
         getFunc = function() return PaperUI.SavedVariables.Font end,
         setFunc = function(val) PaperUI.SavedVariables.Font = val end
     },
-    [4] = {
+    [5] = {
         type = "button",
 		name = "Reload UI",
 	    width = "full",
