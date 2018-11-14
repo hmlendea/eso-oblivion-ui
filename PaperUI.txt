@@ -16,4 +16,5 @@ libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\description.lua
 libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\dropdown.lua
 
 PaperUI.lua
+PaperUITextures.lua
 PaperUISettings.lua
