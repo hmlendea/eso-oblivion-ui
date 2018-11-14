@@ -9,6 +9,8 @@ function RegisterAddonMapMarker(esoTexture, addonMapMarkerName)
     mapMarkerRedirects[esoTexture] = addonMapMarkerName
 end
 
+RegisterAddonMapMarker("esoui/art/icons/poi/poi_ayleidruin_complete.dds", "ayleid_ruin")
+RegisterAddonMapMarker("esoui/art/icons/poi/poi_ayleidruin_incomplete.dds", "ayleid_ruin_unexplored")
 RegisterAddonMapMarker("esoui/art/icons/poi/poi_camp_complete", "camp")
 RegisterAddonMapMarker("esoui/art/icons/poi/poi_city_complete", "city")
 RegisterAddonMapMarker("esoui/art/icons/poi/poi_delve_complete", "delve")
@@ -30,6 +32,8 @@ RegisterAddonMapMarker("esoui/art/icons/servicemappins/servicepin_respecaltar", 
 RegisterAddonMapMarker("esoui/art/icons/servicemappins/servicepin_shadowysupplier", "dark_brotherhood")
 RegisterAddonMapMarker("esoui/art/icons/servicemappins/servicepin_stable", "stable")
 RegisterAddonMapMarker("esoui/art/icons/servicemappins/servicepin_vendor", "merchant")
+RegisterAddonMapMarker("esoui/art/tutorial/poi_ayleidruin_complete.dds", "ayleid_ruin")
+RegisterAddonMapMarker("esoui/art/tutorial/poi_ayleidruin_incomplete.dds", "ayleid_ruin_unexplored")
 RegisterAddonMapMarker("esoui/art/tutorial/poi_camp_complete", "camp")
 RegisterAddonMapMarker("esoui/art/tutorial/poi_city_complete", "city")
 RegisterAddonMapMarker("esoui/art/tutorial/poi_delve_complete", "delve")
