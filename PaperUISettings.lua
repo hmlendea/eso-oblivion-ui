@@ -1,7 +1,4 @@
-local uiModes = {
-    [1] = "Vanilla",
-    [2] = PaperUI.Name,
-}
+local reloadUiWarning = "You must reload the UI for the changes to take effect!"
 
 local panelData = {
     type = "panel",
@@ -22,16 +19,25 @@ local optionsData = {
 		type = "dropdown",
         name = "Interface Style",
         tooltip = "Choose the user interface style.",
-        choices = uiModes,
-        default = PaperUI.Name,
-        warning = "You must reload the UI twice for all the textures to change over properly!",
-        getFunc = function() return PaperUI.SavedVariables.ActiveUI end,
-        setFunc = function(val) PaperUI.SavedVariables.ActiveUI = val end
+        choices = PaperUI.Options.InterfaceStyles,
+        default = PaperUI.Options.InterfaceStyles[1],
+        warning = reloadUiWarning,
+        getFunc = function() return PaperUI.SavedVariables.InterfaceStyle end,
+        setFunc = function(val) PaperUI.SavedVariables.InterfaceStyle = val end
     },
-    [3] = {
+	[3] = {
+		type = "dropdown",
+        name = "Font",
+        tooltip = "Choose the font.",
+        choices = PaperUI.Options.Fonts,
+        default = PaperUI.Options.Fonts[1],
+        warning = reloadUiWarning,
+        getFunc = function() return PaperUI.SavedVariables.Font end,
+        setFunc = function(val) PaperUI.SavedVariables.Font = val end
+    },
+    [4] = {
         type = "button",
 		name = "Reload UI",
-		tooltip = "REMEMBER TO RELOAD THE UI TWICE",
 	    width = "full",
         func = function()
             ReloadUI("ingame")

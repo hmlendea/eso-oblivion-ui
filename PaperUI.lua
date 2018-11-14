@@ -7,6 +7,19 @@ PaperUI = {
         Assets = PaperUI.Name .. "/assets",
         Fonts = PaperUI.Directories.Assets .. "/fonts",
         MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers"
+    },
+    Options = {
+        InterfaceStyle = {
+            [1] = PaperUI.Name,
+            [2] = "Vanilla"
+        },
+        Fonts = {
+            [1] = "Kingthings_Exeter.ttf"
+        },
+        Defaults = {
+            InterfaceStyle = PaperUI.Options.InterfaceStyles[1],
+            Font = PaperUI.Options.Fonts[1]
+        }
     }
 }
 
@@ -16,7 +29,7 @@ function ChangeToPaperUI()
     for key, value in zo_insecurePairs(_G) do
         if (key):find("^Zo") and type(value) == "userdata" and value.SetFont then
            local font = {value:GetFontInfo()}
-           font[1] = PaperUI.Directories.Fonts .. "/Kingthings_Exeter.ttf"
+           font[1] = PaperUI.Directories.Fonts .. "/" .. PaperUI.SavedVariables.Font
            value:SetFont(table.concat(font, "|"))
         end
      end
@@ -31,16 +44,12 @@ function OnAddOnLoaded(event, addonName)
         return
     end
 
-    local defaults = {
-        ActiveUI = PaperUI.Name
-    }
+    PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, ADDON_VERSION, PaperUI.Options.Defaults, nil)
 
-    PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, ADDON_VERSION, defaults, nil)
-
-    if PaperUI.SavedVariables.ActiveUI == "Vanilla" then
-        ChangeToVanillaUI()
-    elseif PaperUI.SavedVariables.ActiveUI == PaperUI.Name then
+    if PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.InterfaceStyles[1] then
         ChangeToPaperUI()
+    elseif PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.InterfaceStyles[2] then
+        ChangeToVanillaUI()
     end
 
     PaperUI:InitialiseAddonMenu()
