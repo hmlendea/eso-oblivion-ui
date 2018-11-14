@@ -3,33 +3,35 @@ PaperUI = {
     Author = "Hori873",
     Version = "1.0",
     SavedVariablesName = "PaperUI_SavedVariables",
-    Directories = {
-        Assets = PaperUI.Name .. "/assets",
-        Fonts = PaperUI.Directories.Assets .. "/fonts",
-        MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers/" .. PaperUI.SavedVariables.MapMarkersStyle
-    },
+    Directories = { },
     Options = {
-        InterfaceStyles = {
-            [1] = PaperUI.Name,
+        AvailableInterfaceStyles = {
+            [1] = "PaperUI",
             [2] = "Vanilla"
         },
-        MapMarkersStyles = {
+        AvailableMapMarkersStyles = {
             [1] = "Oblivion",
-            [2] = "Elven Map Redux"
-        }
-        Fonts = {
+            [2] = "ElvenMapRedux"
+        },
+        AvailableFonts = {
             [1] = "Kingthings_Exeter.ttf"
         },
-        Defaults = {
-            InterfaceStyle = PaperUI.Options.InterfaceStyles[1],
-            MapMarkersStyle = PaperUI.Options.MapMarkersStyles[1],
-            Font = PaperUI.Options.Fonts[1]
-        }
+        Defaults = { }
     }
 }
 
+PaperUI.Directories.Assets = PaperUI.Name .. "/assets"
+PaperUI.Directories.Fonts = PaperUI.Directories.Assets .. "/fonts"
+PaperUI.Directories.MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers"
+
+PaperUI.Options.Defaults = {
+    InterfaceStyle = PaperUI.Options.AvailableInterfaceStyles[1],
+    MapMarkersStyle = PaperUI.Options.AvailableMapMarkersStyles[1],
+    Font = PaperUI.Options.AvailableFonts[1]
+}
+
 function ChangeToPaperUI()
-    PaperUITextures:EnableAll()
+    PaperUI:EnableAllTextures()
 
     for key, value in zo_insecurePairs(_G) do
         if (key):find("^Zo") and type(value) == "userdata" and value.SetFont then
@@ -41,7 +43,7 @@ function ChangeToPaperUI()
 end
 
 function ChangeToVanillaUI()
-    PaperUITextures:DisableAll()
+    PaperUI:DisableAllTextures()
 end
 
 function OnAddOnLoaded(event, addonName)
@@ -49,11 +51,11 @@ function OnAddOnLoaded(event, addonName)
         return
     end
 
-    PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, ADDON_VERSION, PaperUI.Options.Defaults, nil)
+    PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, PaperUI.Version, PaperUI.Options.Defaults, nil)
 
-    if PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.InterfaceStyles[1] then
+    if PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.AvailableInterfaceStyles[1] then
         ChangeToPaperUI()
-    elseif PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.InterfaceStyles[2] then
+    elseif PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.AvailableInterfaceStyles[2] then
         ChangeToVanillaUI()
     end
 
