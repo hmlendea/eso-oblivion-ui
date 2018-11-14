@@ -14,7 +14,8 @@ PaperUI = {
             [2] = "Vanilla"
         },
         MapMarkersStyles = {
-            [1] = "Oblivion"
+            [1] = "Oblivion",
+            [2] = "Elven Map Redux"
         }
         Fonts = {
             [1] = "Kingthings_Exeter.ttf"
