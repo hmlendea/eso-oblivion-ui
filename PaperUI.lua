@@ -6,8 +6,7 @@ PaperUI = {
     Directories = { },
     Options = {
         AvailableInterfaceStyles = {
-            [1] = "PaperUI",
-            [2] = "Vanilla"
+            [1] = "PaperUI"
         },
         AvailableMapMarkersStyles = {
             [1] = "Oblivion",
@@ -22,6 +21,7 @@ PaperUI = {
 
 PaperUI.Directories.Assets = PaperUI.Name .. "/assets"
 PaperUI.Directories.Fonts = PaperUI.Directories.Assets .. "/fonts"
+PaperUI.Directories.Interface = PaperUI.Directories.Assets .. "/interface"
 PaperUI.Directories.MapMarkers = PaperUI.Directories.Assets .. "/mapmarkers"
 
 PaperUI.Options.Defaults = {
@@ -54,11 +54,7 @@ function OnAddOnLoaded(event, addonName)
     PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, PaperUI.Version, PaperUI.Options.Defaults, nil)
     PaperUI:RegisterTextures()
 
-    if PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.AvailableInterfaceStyles[1] then
-        ChangeToPaperUI()
-    elseif PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.AvailableInterfaceStyles[2] then
-        ChangeToVanillaUI()
-    end
+    ChangeToPaperUI()
 
     PaperUI:InitialiseAddonMenu()
 end
