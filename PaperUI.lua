@@ -52,6 +52,7 @@ function OnAddOnLoaded(event, addonName)
     end
 
     PaperUI.SavedVariables = ZO_SavedVars:NewAccountWide(PaperUI.SavedVariablesName, PaperUI.Version, PaperUI.Options.Defaults, nil)
+    PaperUI:RegisterTextures()
 
     if PaperUI.SavedVariables.InterfaceStyle == PaperUI.Options.AvailableInterfaceStyles[1] then
         ChangeToPaperUI()
