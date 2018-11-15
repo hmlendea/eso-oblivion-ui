@@ -6,7 +6,7 @@ PaperUI = {
     Directories = { },
     Options = {
         AvailableInterfaceStyles = {
-            [1] = "PaperUI"
+            [1] = "Oblivion DarNified DarN"
         },
         AvailableMapMarkersStyles = {
             [1] = "Oblivion",
