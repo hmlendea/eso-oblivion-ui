@@ -1,12 +1,13 @@
 Icon Name,Elven Map Redux Colour,Oblivion Colour
-alchemist,78b665,78b665
-ayleid_ruin,31BA9C,31BA9C
-bank,FCD116,FCD116
+alchemist,#78B665,#78B665
+ayleid_ruin,#31BA9C,#31BA9C
+bank,#FCD116,#FCD116
 blacksmith,#657050,#657050
 boss,#CE1126,#CE1126
 camp,#7bb663,#00BF00
 caravan,,#795532
 cave,#CE1126,#DE4931
+cemetery,#78B665,#78B665
 city,#CE1126,#7350E0
 dark_brotherhood,#CE1126,#CE1126
 delve,,#E18F15
