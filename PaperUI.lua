@@ -10,7 +10,9 @@ PaperUI = {
         },
         AvailableMapMarkersStyles = {
             [1] = "Oblivion",
-            [2] = "ElvenMapRedux"
+            [2] = "Oblivion Coloured"
+            [3] = "Oblivion Borderless",
+            [4] = "Elven Map Redux"
         },
         AvailableFonts = {
             [1] = "Kingthings_Exeter.ttf"
