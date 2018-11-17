@@ -12,6 +12,7 @@ dark_brotherhood,#CE1126,#CE1126
 delve,,#E18F15
 dock,#167599,#167599
 dolmen,,#B3559C
+dungeon,#CE1126,#CE1126
 dwemer_ruin,,#E18F15
 farm,,#A3C358
 grove,#007F00,#007F00
@@ -25,10 +26,12 @@ mine,,#E18F15
 museum,#A86053,#A86053
 outfitter,,#795532
 outlaws_refuge,,#B3559C
+public_dungeon,#E18F15,#E18F15
 rededication_stone,,#31BA9C
 ruin,,#DE4931
 sewer,,#145A9A
 skyshard,#31BA9C,#31BA9C
 stable,,#B3559C
 town,,#EF4AF5
+trial,,#FF0000
 wayshrine,#31BA9C,#31BA9C
