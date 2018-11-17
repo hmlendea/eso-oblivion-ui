@@ -9,7 +9,7 @@ function RegisterMapMarkerTexture(sourceTexturePath, targetTextureName)
     mapMarkerRedirects[sourceTexturePath] = targetTextureName
 end
 
-function PaperUI:RegisterTextures()
+function OblivionUI:RegisterTextures()
     interfaceRedirects = { }
     mapMarkerRedirects = { }
 
@@ -216,17 +216,17 @@ function PaperUI:RegisterTextures()
     RegisterMapMarkerTexture("SkyShards/Icons/Skyshard-unknown", "skyshard_unexplored")
 end
 
-function PaperUI:EnableAllTextures()
+function OblivionUI:EnableAllTextures()
     for sourceTexturePath, targetTextureName in pairs(interfaceRedirects) do
-        RedirectTexture(sourceTexturePath .. ".dds", PaperUI.Directories.Interface .. "/" .. string.gsub(PaperUI.SavedVariables.InterfaceStyle, "%s+", "") .. "/" .. targetTextureName .. ".dds")
+        RedirectTexture(sourceTexturePath .. ".dds", OblivionUI.Directories.Interface .. "/" .. string.gsub(OblivionUI.SavedVariables.InterfaceStyle, "%s+", "") .. "/" .. targetTextureName .. ".dds")
     end
 
     for sourceTexturePath, targetTextureName in pairs(mapMarkerRedirects) do
-        RedirectTexture(sourceTexturePath .. ".dds", PaperUI.Directories.MapMarkers .. "/" .. string.gsub(PaperUI.SavedVariables.MapMarkersStyle, "%s+", "") .. "/" .. targetTextureName .. ".dds")
+        RedirectTexture(sourceTexturePath .. ".dds", OblivionUI.Directories.MapMarkers .. "/" .. string.gsub(OblivionUI.SavedVariables.MapMarkersStyle, "%s+", "") .. "/" .. targetTextureName .. ".dds")
     end
 end
 
-function PaperUI:DisableAllTextures()
+function OblivionUI:DisableAllTextures()
     for sourceTexturePath, targetTextureName in pairs(interfaceRedirects) do
         RedirectTexture(sourceTexturePath, sourceTexturePath)
     end

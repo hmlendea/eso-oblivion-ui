@@ -1,9 +1,9 @@
-## Title: PaperUI
+## Title: OblivionUI
 ## Description: Paper UI overhaul, inspired from Oblivion
 ## Author: Hori873
 ## APIVersion: 100021 100022
 ## Version: 1.0
-## SavedVariables: PaperUI_SavedVariables
+## SavedVariables: OblivionUI_SavedVariables
 ## OptionalDependsOn:  LibAddonMenu-2.0
 
 libs\LibAddonMenu-2.0\LibStub\LibStub.lua
@@ -15,6 +15,6 @@ libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\checkbox.lua
 libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\description.lua
 libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\dropdown.lua
 
-PaperUI.lua
-PaperUISettings.lua
-PaperUITextures.lua
+OblivionUI.lua
+OblivionUI_Settings.lua
+OblivionUI_Textures.lua
