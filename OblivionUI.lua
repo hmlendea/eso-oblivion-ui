@@ -9,7 +9,7 @@ OblivionUI = {
         },
         AvailableMapMarkersStyles = {
             [1] = "Vanilla",
-            [2] = "Coloured"
+            [2] = "Coloured",
             [3] = "Borderless",
             [4] = "Elven Map Redux"
         },
