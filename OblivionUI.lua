@@ -5,16 +5,19 @@ OblivionUI = {
     Directories = { },
     Options = {
         AvailableInterfaceStyles = {
-            [1] = "DarNified DarN"
+            [1] = "Vanilla",
+            [2] = "DarNified DarN"
         },
         AvailableMapMarkersStyles = {
             [1] = "Vanilla",
-            [2] = "Coloured",
-            [3] = "Borderless",
-            [4] = "Elven Map Redux"
+            [2] = "Oblivion",
+            [3] = "Coloured",
+            [4] = "Borderless",
+            [5] = "Elven Map Redux"
         },
         AvailableFonts = {
-            [1] = "Kingthings_Exeter.ttf"
+            [1] = "Vanilla",
+            [2] = "Kingthings_Exeter.ttf"
         },
         Defaults = { }
     }
@@ -33,16 +36,28 @@ OblivionUI.Options.Defaults = {
     Font = OblivionUI.Options.AvailableFonts[1]
 }
 
-function EnableInterfaceStyling()
-    OblivionUI:EnableAllTextures()
+function EnableUiStyling()
+    if OblivionUI.SavedVariables.InterfaceStyle ~= OblivionUI.Options.AvailableInterfaceStyles[1] then
+        OblivionUI:EnableInterfaceTextures()
+    else
+        OblivionUI:DisableInterfaceTextures()
+    end
 
-    for key, value in zo_insecurePairs(_G) do
-        if (key):find("^Zo") and type(value) == "userdata" and value.SetFont then
-           local font = {value:GetFontInfo()}
-           font[1] = OblivionUI.Directories.Fonts .. "/" .. OblivionUI.SavedVariables.Font
-           value:SetFont(table.concat(font, "|"))
+    if OblivionUI.SavedVariables.MapMarkersStyle ~= OblivionUI.Options.AvailableMapMarkersStyles[1] then
+        OblivionUI:EnableMapMarkersTextures()
+    else
+        OblivionUI:DisableMapMarkerTextures()
+    end
+
+    if OblivionUI.SavedVariables.Font ~= OblivionUI.Options.AvailableFonts[1] then
+        for key, value in zo_insecurePairs(_G) do
+            if (key):find("^Zo") and type(value) == "userdata" and value.SetFont then
+            local font = {value:GetFontInfo()}
+            font[1] = OblivionUI.Directories.Fonts .. "/" .. OblivionUI.SavedVariables.Font
+            value:SetFont(table.concat(font, "|"))
+            end
         end
-     end
+    end -- TODO: Implement the else branch
 end
 
 function ChangeToVanillaUI()
@@ -57,7 +72,7 @@ function OnAddOnLoaded(event, addonName)
     OblivionUI.SavedVariables = ZO_SavedVars:NewAccountWide(OblivionUI.SavedVariablesName, OblivionUI.Version, OblivionUI.Options.Defaults, nil)
     OblivionUI:RegisterTextures()
 
-    EnableInterfaceStyling()
+    EnableUiStyling()
 
     OblivionUI:InitialiseAddonMenu()
 end
