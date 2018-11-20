@@ -17,4 +17,5 @@ libs\LibAddonMenu-2.0\LibAddonMenu-2.0\controls\dropdown.lua
 
 OblivionUI.lua
 OblivionUI_Settings.lua
-OblivionUI_Textures.lua
+OblivionUI_Textures_Interface.lua
+OblivionUI_Textures_MapMarkers.lua
