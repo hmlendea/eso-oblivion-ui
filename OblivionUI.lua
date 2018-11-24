@@ -46,7 +46,7 @@ function EnableUiStyling()
     if OblivionUI.SavedVariables.MapMarkersStyle ~= OblivionUI.Options.AvailableMapMarkersStyles[1] then
         OblivionUI:EnableMapMarkersTextures()
     else
-        OblivionUI:DisableMapMarkerTextures()
+        OblivionUI:DisableMapMarkersTextures()
     end
 
     if OblivionUI.SavedVariables.Font ~= OblivionUI.Options.AvailableFonts[1] then
