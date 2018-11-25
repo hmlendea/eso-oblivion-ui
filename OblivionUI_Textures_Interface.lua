@@ -16,7 +16,7 @@ function OblivionUI:DisableInterfaceTextures()
     end
 end
 
-function OblivionUI:RegisterTextures()
+function OblivionUI:RegisterInterfaceTextures()
     interfaceRedirects = { }
 
     -- Interface GUI

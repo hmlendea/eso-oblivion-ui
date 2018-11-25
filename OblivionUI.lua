@@ -6,14 +6,14 @@ OblivionUI = {
     Options = {
         AvailableInterfaceStyles = {
             [1] = "Vanilla",
-            [2] = "DarNified DarN"
+            [2] = "DarN"
         },
         AvailableMapMarkersStyles = {
             [1] = "Vanilla",
             [2] = "Oblivion",
             [3] = "Coloured",
             [4] = "Borderless",
-            [5] = "Elven Map Redux"
+            [5] = "Elven"
         },
         AvailableFonts = {
             [1] = "Vanilla",
@@ -70,7 +70,8 @@ function OnAddOnLoaded(event, addonName)
     end
 
     OblivionUI.SavedVariables = ZO_SavedVars:NewAccountWide(OblivionUI.SavedVariablesName, OblivionUI.Version, OblivionUI.Options.Defaults, nil)
-    OblivionUI:RegisterTextures()
+    OblivionUI:RegisterInterfaceTextures()
+    OblivionUI:RegisterMapMarkersTextures()
 
     EnableUiStyling()
 

@@ -16,7 +16,7 @@ function OblivionUI:DisableMapMarkersTextures()
     end
 end
 
-function OblivionUI:RegisterTextures()
+function OblivionUI:RegisterMapMarkersTextures()
     mapMarkerRedirects = { }
     
     RegisterMapMarkerTexture("esoui/art/compass/quest_icon_door_assisted", "door")
